@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cars {
-    private List<Car> car;
-
     private final String ERROR_NO_CAR = "[ERROR] 경주할 자동차가 없습니다.";
+
+    private List<Car> car;
 
     public Cars() {}
 
@@ -22,5 +22,9 @@ public class Cars {
         this.car = car;
 
         return true;
+    }
+
+    public List<Car> getCar() {
+        return this.car;
     }
 }
