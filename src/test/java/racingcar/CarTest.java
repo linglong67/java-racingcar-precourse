@@ -33,12 +33,12 @@ public class CarTest {
 
     @Test
     void RACE() {
-        String joinCars = "car1,car2,car3";
-
+        String joinCars = "carA,carB,carC";
         Cars cars = new Cars();
         cars.ready(joinCars);
 
         RaceResult result = new RaceResult(5);
         result.start(cars);
+        assertThat(result.isGameEnd()).isTrue();
     }
 }

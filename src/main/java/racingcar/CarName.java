@@ -1,6 +1,7 @@
 package racingcar;
 
 public class CarName {
+    private final int MIN_NAME_LENGTH = 0;
     private final int MAX_NAME_LENGTH = 5;
     private final String ERROR_MAX_NAME_LENGTH = "[ERROR] 자동차 이름은 5자 이하만 가능합니다.";
 

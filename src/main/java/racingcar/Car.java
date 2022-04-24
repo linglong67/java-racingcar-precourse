@@ -23,6 +23,10 @@ public class Car {
         return CarStatus.STOP;
     }
 
+    public CarName getCarName() {
+        return this.carName;
+    }
+
     public int getRun() {
         return this.run;
     }

@@ -6,7 +6,7 @@ import java.util.List;
 public class Cars {
     private final String ERROR_NO_CAR = "[ERROR] 경주할 자동차가 없습니다.";
 
-    private List<Car> car;
+    private List<Car> cars;
 
     public Cars() {}
 
@@ -15,16 +15,16 @@ public class Cars {
             throw new IllegalArgumentException(ERROR_NO_CAR);
         }
 
-        List<Car> car = new ArrayList<>();
+        List<Car> cars = new ArrayList<>();
         for(String carName : carsInput.split(",")) {
-            car.add(new Car(new CarName(carName)));
+            cars.add(new Car(new CarName(carName)));
         }
-        this.car = car;
+        this.cars = cars;
 
         return true;
     }
 
     public List<Car> getCar() {
-        return this.car;
+        return this.cars;
     }
 }
