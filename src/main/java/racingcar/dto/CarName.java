@@ -9,10 +9,10 @@ public class CarName {
     private String name;
 
     public CarName(String name) {
-        if(name.length() < MIN_NAME_LENGTH) {
+        if (name.length() < MIN_NAME_LENGTH) {
             throw new IllegalArgumentException(ERROR_MIN_NAME_LENGTH);
         }
-        if(name.length() > MAX_NAME_LENGTH) {
+        if (name.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException(ERROR_MAX_NAME_LENGTH);
         }
         this.name = name;

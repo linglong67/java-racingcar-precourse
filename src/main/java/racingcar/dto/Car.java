@@ -14,7 +14,7 @@ public class Car {
     }
 
     public CarStatus operate(int i) {
-        if(i >= MIN_NUM_FOR_RUN) {
+        if (i >= MIN_NUM_FOR_RUN) {
             this.run += 1;
             return CarStatus.MOVING_FORWARD;
         }
@@ -37,7 +37,7 @@ public class Car {
 
     public void carLocation(int count) {
         System.out.print(this.carName.getName() + " : ");
-        for(int i=0; i<count; i++) {
+        for (int i = 0; i < count; i++) {
             System.out.print("-");
         }
         System.out.println();

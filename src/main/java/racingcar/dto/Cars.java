@@ -8,15 +8,16 @@ public class Cars {
 
     private List<Car> cars;
 
-    public Cars() {}
+    public Cars() {
+    }
 
     public boolean ready(String carsInput) {
-        if(carsInput.length() == 0) {
+        if (carsInput.length() == 0) {
             throw new IllegalArgumentException(ERROR_NO_CAR);
         }
 
         List<Car> cars = new ArrayList<>();
-        for(String carName : carsInput.split(",")) {
+        for (String carName : carsInput.split(",")) {
             cars.add(new Car(new CarName(carName)));
         }
         this.cars = cars;

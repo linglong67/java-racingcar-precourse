@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RaceResult {
-
     public static final String ERROR_MOVE_COUNT = "[ERROR] 1 이상의 이동 횟수를 입력해주세요.";
     public static final String ERROR_NON_NUMBER = "[ERROR] 숫자 입력값이 아닙니다.";
     public static final String RACE_RESULT = "실행 결과";
@@ -23,15 +22,15 @@ public class RaceResult {
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException(ERROR_NON_NUMBER);
         }
-        
-        if(this.operateTime < MIN_NUM_FOR_RACE) {
+
+        if (this.operateTime < MIN_NUM_FOR_RACE) {
             throw new IllegalArgumentException(ERROR_MOVE_COUNT);
         }
     }
 
     public void start(Cars cars) {
         System.out.println(RACE_RESULT);
-        for(int i=0; i<this.operateTime; i++) {
+        for (int i = 0; i < this.operateTime; i++) {
             racing(i, cars);
         }
     }
@@ -56,13 +55,13 @@ public class RaceResult {
     }
 
     private void getMaxRun(Car car) {
-        if(car.getRun() >= this.maxRun) {
+        if (car.getRun() >= this.maxRun) {
             this.maxRun = car.getRun();
         }
     }
 
     private void getWinner(Car car) {
-        if(car.getRun() == this.maxRun) {
+        if (car.getRun() == this.maxRun) {
             this.winner.add(car.getCarName().getName());
         }
     }

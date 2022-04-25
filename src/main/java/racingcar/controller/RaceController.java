@@ -8,7 +8,7 @@ public class RaceController {
 
     public void play() {
         System.out.println(INPUT_MESSAGE_FOR_CAR_NAME);
-        Cars cars = new Cars();        
+        Cars cars = new Cars();
 
         RaceService raceService = new RaceService();
         raceService.setupCars(cars);
