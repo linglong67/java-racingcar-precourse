@@ -3,6 +3,12 @@ package racingcar;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import racingcar.dto.Car;
+import racingcar.dto.CarName;
+import racingcar.dto.CarStatus;
+import racingcar.dto.Cars;
+import racingcar.dto.RaceResult;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CarTest {
@@ -37,8 +43,7 @@ public class CarTest {
         Cars cars = new Cars();
         cars.ready(joinCars);
 
-        RaceResult result = new RaceResult(5);
+        RaceResult result = new RaceResult("5");
         result.start(cars);
-        assertThat(result.isGameEnd()).isTrue();
     }
 }

@@ -2,6 +2,10 @@ package racingcar;
 
 import org.junit.jupiter.api.Test;
 
+import racingcar.dto.Car;
+import racingcar.dto.CarName;
+import racingcar.dto.Cars;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 

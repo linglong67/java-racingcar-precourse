@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.dto;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
@@ -8,20 +8,25 @@ import java.util.List;
 public class RaceResult {
 
     public static final String ERROR_MOVE_COUNT = "[ERROR] 1 이상의 이동 횟수를 입력해주세요.";
+    public static final String ERROR_NON_NUMBER = "[ERROR] 숫자 입력값이 아닙니다.";
     public static final String RACE_RESULT = "실행 결과";
     public static final String RACE_WINNER = "최종 우승자: ";
+    public static final int MIN_NUM_FOR_RACE = 1;
 
     private int operateTime;
     private int maxRun;
     private List<String> winner;
-    private boolean gameEnd;
 
-    public RaceResult(int operateTime) {
-        if(operateTime < 0) {
+    public RaceResult(String operateTime) {
+        try {
+            this.operateTime = Integer.parseInt(operateTime);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(ERROR_NON_NUMBER);
+        }
+        
+        if(this.operateTime < MIN_NUM_FOR_RACE) {
             throw new IllegalArgumentException(ERROR_MOVE_COUNT);
         }
-        this.operateTime = operateTime;
-        this.gameEnd = false;
     }
 
     public void start(Cars cars) {
@@ -37,14 +42,6 @@ public class RaceResult {
             car.carLocation(car.getRun());
         });
         System.out.println();
-
-        if(operate == this.operateTime - 1) {
-            this.gameEnd = true;
-        }
-    }
-
-    public boolean isGameEnd() {
-        return this.gameEnd;
     }
 
     public void showWinner(Cars cars) {

@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.dto;
 
 public class Car {
     public static final int MIN_NUM_FOR_RUN = 4;
