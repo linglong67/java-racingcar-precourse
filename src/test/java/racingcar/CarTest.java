@@ -15,8 +15,8 @@ public class CarTest {
 
     @Test
     void RUN_OR_STOP() {
-        assertThat(car.operate(9)).isEqualTo(CarStatus.RUN);
-        assertThat(car.operate(4)).isEqualTo(CarStatus.RUN);
+        assertThat(car.operate(9)).isEqualTo(CarStatus.MOVING_FORWARD);
+        assertThat(car.operate(4)).isEqualTo(CarStatus.MOVING_FORWARD);
         assertThat(car.operate(3)).isEqualTo(CarStatus.STOP);
         assertThat(car.operate(0)).isEqualTo(CarStatus.STOP);
     }

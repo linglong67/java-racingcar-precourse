@@ -11,13 +11,29 @@ public class Application {
         System.out.println(INPUT_MESSAGE_FOR_CAR_NAME);
 
         Cars cars = new Cars();
-        if(cars.ready(Console.readLine())) {
-            System.out.println(INPUT_MESSAGE_FOR_TRY_COUNT);
-            RaceResult result = new RaceResult(Integer.parseInt(Console.readLine()));
+        while (true) {
 
-            System.out.println();
-            result.start(cars);
-            result.showWinner(cars);
+            try {
+                if (cars.ready(Console.readLine())) {
+                    System.out.println(INPUT_MESSAGE_FOR_TRY_COUNT);
+                    break;
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        while (true) {
+            try {
+                RaceResult result = new RaceResult(Integer.parseInt(Console.readLine()));
+                System.out.println();
+
+                result.start(cars);
+                result.showWinner(cars);
+                break;
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 }

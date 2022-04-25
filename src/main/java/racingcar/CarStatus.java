@@ -1,5 +1,5 @@
 package racingcar;
 
 public enum CarStatus {
-    STOP, RUN
+    STOP, MOVING_FORWARD
 }

@@ -16,7 +16,7 @@ public class Car {
     public CarStatus operate(int i) {
         if(i >= MIN_NUM_FOR_RUN) {
             this.run += 1;
-            return CarStatus.RUN;
+            return CarStatus.MOVING_FORWARD;
         }
 
         this.stop += 1;
